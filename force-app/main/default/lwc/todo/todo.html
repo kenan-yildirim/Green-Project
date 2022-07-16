@@ -1,0 +1,28 @@
+<template>
+	<lightning-card title="To Do App">
+
+		<div class="slds-m-around_medium">
+			<lightning-input label=" " type="text" placeholder="Type Here..." onchange={handleToDoChanges}>
+			</lightning-input>
+		</div>
+
+		<div class="slds-m-around_medium">
+			<lightning-button value={taskDetails} label="Add" title="Non-primary action" onclick={handleToDo}>
+			</lightning-button>
+		</div>
+
+
+		<div class="slds-m-around_medium">
+			<ul>
+				<template for:each={todos} for:item="todo">
+					<li key={todo.id}>
+						<lightning-tile label={todo.taskDetails} type="media" class="slds-m-around_medium">
+							<lightning-icon size="xx-small" slot="media" icon-name="action:approval"></lightning-icon>
+						</lightning-tile>
+					</li>
+				</template>
+			</ul>
+		</div>
+
+	</lightning-card>
+</template>
